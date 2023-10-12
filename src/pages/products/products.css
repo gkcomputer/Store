@@ -1,0 +1,8 @@
+.products {
+  margin-top: 73px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  background-color: white;
+}
