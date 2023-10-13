@@ -14,7 +14,6 @@ import Cart from "./pages/cart/Cart";
 import { RootLayout } from "./pages/Root";
 import { Error } from "./pages/errorPage/Error";
 import DropDown from "./pages/custominput/DropDown";
-import Login from "./pages/login/Login";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +25,6 @@ const router = createBrowserRouter([
       { path: "/", element: <Welcome /> },
       { path: "/Products", element: <Products /> },
       { path: "/cart", element: <Cart /> },
-      { path: "/login", element: <Login /> },
     ],
   },
 ]);

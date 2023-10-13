@@ -29,6 +29,7 @@ function ResponsiveAppBar(props) {
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const pages = ["Home", "Products", "Cart"];
@@ -62,7 +63,7 @@ function ResponsiveAppBar(props) {
     <>
       <header className={classes.main}>
         <div className={classes.header}>
-          <nav className={classes.navlink}>
+          <nav>
             <p>STORE</p>
           </nav>
           <nav className={classes.buttons}>
@@ -73,30 +74,32 @@ function ResponsiveAppBar(props) {
                 onClick={() => clearSearchHandler("")}
               />
             </Box>
-
-            <NavLink to="/" className={classes.navlink}>
-              <p>Home</p>
-            </NavLink>
-
-            <NavLink
-              to="/Products"
-              className={classes.navlink}
-              onClick={() => {
-                dispatch(productsApi_action());
-              }}
-            >
-              <p>Products</p>
-            </NavLink>
-
-            <div className={classes.cartp}>
-              <NavLink to="/cart" className={classes.navlink}>
-                <p>cart</p>
+            <p>
+              <NavLink to="/" className={classes.navlink}>
+                Home
               </NavLink>
-            </div>
-            <NavLink to="/login" className={classes.navlink}>
-              <p>Login</p>
-            </NavLink>
+            </p>
+            <p>
+              <NavLink
+                to="/Products"
+                className={classes.navlink}
+                onClick={() => {
+                  dispatch(productsApi_action());
+                }}
+              >
+                Products
+              </NavLink>
+            </p>
+            <p className={classes.cartp}>
+              <NavLink to="/cart" className={classes.navlink}>
+                cart
+              </NavLink>
+              <img className={classes.img} src={Cart} alt="cart" />
+            </p>
           </nav>
+        </div>
+        <div className={classes.count}>
+          <p>{count}</p>
         </div>
       </header>
     </>
